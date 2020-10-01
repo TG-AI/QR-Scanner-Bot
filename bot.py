@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 #Telegram
+from os import environ
+
 import telegram
 from telegram.ext import Updater, Filters, MessageHandler
 
@@ -16,7 +18,7 @@ from os.path import isfile, join
 from io import BytesIO
 from PIL import Image
 
-TOKEN = "TOKEN_FROM_@BOTFATHER"
+TOKEN = environ.get('BOT_TOKEN')
 
 def decode(bot, update):
 	chat_id = update.message.chat_id
