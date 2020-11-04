@@ -15,7 +15,7 @@ from os.path import isfile, join
 from io import BytesIO
 from PIL import Image
 
-TOKEN = "TOKEN_FROM_@BOTFATHER"
+TOKEN = os.environ.get("SOME_TOKEN", None)
 
 def decode_qr(update: Update, context: CallbackContext):
 	chat_id = update.message.chat_id
